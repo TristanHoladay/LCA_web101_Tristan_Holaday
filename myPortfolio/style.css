@@ -1,0 +1,115 @@
+html {
+    background-image: url("https://i1.wp.com/www.lsts.com.cy/wp-content/uploads/2014/04/Yacht.jpg?resize=570%2C350");
+    background-image: centered;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    font-family: Aria, Helvetica, sans-serif;
+    
+}
+
+.logo {
+    width: 30%;
+    height: 80%;
+    margin: 3% 10%;
+    background-color: transparent;
+    filter: saturate(5);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+nav > a {
+    margin: 2% 2% 3%;
+    height: 10%;
+    width: 15%;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 25px;
+    background: transparent;
+    padding: 20px; 
+    text-align: center;
+    border: 2px solid blue;
+    
+    transform: scale(1.1);
+}
+
+.has-border {
+    border-radius: 25px;
+    border: 2px solid #0795C3;
+    background: none;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 80%;
+    margin: 30% auto;
+    grid-column: 2/3;
+}
+
+h1 {
+    color: rgb(3, 2, 39);
+    grid-column: 2/3;
+    margin: 3% auto;
+    border-bottom: 2px solid #1940A9;;
+}
+
+h2 {
+    color: rgb(3, 2, 39);
+    grid-column: 2/3;
+    margin: 3% auto;
+    font-style: italic;
+}
+
+button {
+    grid-column: 2/3;
+    margin: 3% auto;
+    width: 80%;
+    height: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 25px;
+    background: transparent;
+    padding: 20px 20px;
+    padding-bottom: 5%;
+    text-align: center;
+    color: rgb(3, 2, 39);
+    letter-spacing: 12px;
+    font-style: italic;
+}
+
+.grow {
+    
+}
+
+.grow:hover {
+    
+}
+
+class="grow" class="grow:hover"
