@@ -1,0 +1,14 @@
+body {
+    font-size: 30px;
+}
+
+article {
+    font-family: Calibri, Georgia, serif;
+    font-size: 23px; 
+    color: black; 
+    background-color: rgb(16, 153, 153); 
+    margin: 10px;
+    padding: 2px;
+    line-height: 25px;
+    border: 2px double; 
+}
