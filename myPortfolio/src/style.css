@@ -1,14 +1,39 @@
 body {
     font-size: 30px;
+    background: rgb(151, 166, 212);
+    text-align: center;
+    line-height: 25px;
 }
 
-article {
+
+main > article {
+    background: red;
     font-family: Calibri, Georgia, serif;
     font-size: 23px; 
-    color: black; 
-    background-color: rgb(16, 153, 153); 
+    text-align: left !important;
+    color: black;
     margin: 10px;
     padding: 2px;
-    line-height: 25px;
-    border: 2px double; 
+    border: 2px double;
 }
+
+article:nth-of-type(2), article:nth-of-type(4) {
+    background: rgb(16, 153, 153);
+}
+
+
+article:hover::first-letter{
+    font-size: 30px;
+    color: white; 
+}
+
+span {
+    font-style: italic;
+}
+
+footer {
+font-size: 15px;
+}
+
+
+
