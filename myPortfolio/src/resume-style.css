@@ -3,14 +3,24 @@ body {
     margin-left: 20px;
 }
 
-header > h1 {
+header p {
+    color: white;
+    background: rgb(25,175,229);
+    border: dotted rgb(25,175,229) 3px;
+    margin-bottom: 3%;
+    padding: 3px;
+}
+
+header h1 {
     font-style: bolder;
     font-size: 35px;
+    color: rgb(25,175,229);
 }
 
 main{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    font-size: 17px;
     margin: 0;
 }
 
@@ -21,6 +31,19 @@ section {
 .section-head {
     font-size: 20px;
     border-bottom: solid .2px;
+    margin: auto 2px auto 2px;
+    padding: 5px; 
+}
+
+/*trying to get text to center with middle of logo
+.section-head span:nth-of-type(2) {
+
+}
+*/
+
+.logo_image {
+    width: 5%;
+    height: auto;
 }
 
 #left-side {
@@ -28,12 +51,104 @@ section {
     grid-column: 1/2;
 }
 
+#certs {
+    width: 16%;
+    /*want to get certs to line up with rest of text and no
+    so close to dates*/
+}
+
+/* trying to create columns so interests line up with other texts
+#interests {
+    grid-template-columns: 
+}
+
+#interests h4 {
+    grid-column: 2/2;
+}
+*/
+
 #right-side {
     display: grid;
     grid-column: 2/2;
     margin-left: 30px;
 }
 
+#right-side .logo_image {
+    width: 18%;
+    height: auto;
+}
+
+#personal div {
+    line-height: 1.5vh;
+    font-size: 3vh;
+    margin-bottom: auto;
+}
+
+#skills div {
+    line-height: 1.5vh;
+    font-size: 3vh;
+    margin-bottom: auto;
+}
+
+#software div {
+    line-height: 7vh;
+    font-size: 3vh;
+    margin-bottom: 20px;
+}
+
+#p_progress div {
+    margin-top: .3em;
+    width: 80%;
+    height: .5em;
+    border: solid blue 1px; 
+    background: -webkit-linear-gradient(left, blue 90%, white 10%);
+    position: relative;
+}
+
+#a_progress div {
+    margin-top: .3em;
+    width: 80%;
+    height: .5em;
+    border: solid blue 1px; 
+    background: -webkit-linear-gradient(left, blue 80%, white 20%);
+    position: relative;
+}
+
+#e_progress div {
+    margin-top: .3em;
+    width: 80%;
+    height: .5em;
+    border: solid blue 1px; 
+    background: -webkit-linear-gradient(left, blue 85%, white 15%);
+    position: relative;
+}
+
+#vm_progress div {
+    margin-top: .3em;
+    width: 80%;
+    height: .5em;
+    border: solid blue 1px; 
+    background: -webkit-linear-gradient(left, blue 60%, white 40%);
+    position: relative;
+}
+
+
+.container-inner {
+    overflow: auto;
+}
+
 .date {
+    font-size: 15px;
+    margin: 2% 2% 2% 1%;
+    float: left;
+    border: dotted black 1px; 
+}
+
+#skills {
+    font-size: 17px;
+}
+
+.invisible {
+    display: none;
     float: left;
 }
