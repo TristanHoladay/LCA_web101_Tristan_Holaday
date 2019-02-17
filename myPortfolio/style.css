@@ -19,13 +19,13 @@ main {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 35% 35% 30%;
+    grid-template-rows: auto 20% 15% auto;
 }
 
-.logo {
-    width: 30%;
-    height: 80%;
-    margin: 3% 10%;
+#logo {
+    width: 100%;
+    height: auto; 
     background-color: transparent;
     filter: saturate(5);
 }
@@ -42,10 +42,10 @@ nav > a {
     width: 15%;
     color: rgb(3, 2, 39);
     font-family: Aria, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 1em;
     border-radius: 10px 20px;
     background: transparent;
-    padding: 20px; 
+    padding: 1.5em; 
     text-align: center;
     border: 2px solid rgba(243, 176, 7, 0.603);
 }
@@ -73,14 +73,18 @@ button:hover, nav > a:hover {
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 1.5em;
     color: rgb(3, 2, 39);
     grid-column: 2/3;
-    margin: 3% auto;
-    border-bottom: 2px solid rgb(3, 2, 39);
+    text-decoration: underline;
+    display: inline-block;
+    width: 10em;
+    margin: 2em auto auto; 
 }
 
 h2 {
+    font-size: 1.1em;
+    display: inline-block;
     color: rgb(3, 2, 39);
     grid-column: 2/3;
     margin: 3% auto;
@@ -110,58 +114,140 @@ button {
 }
 
 @media (max-width: 1200px) {
-    body {
-        font-size: 100%;
-        height: 100vh;
-        width: 85vw;
-    }
-
     header {
         margin-top: 3%;
     }
 
+    nav {
+        width: 95%;
+    }
+
+    #logo {
+        margin-left: 5%;
+    }
+
     button {
-        margin: 0px;
         width: auto;
-        font-size: 10px;
+        font-size: 1.5em;
     }
 
-    header {
-        grid-template-columns: 
-    }
-
-
-    .heading {
+    h1 {
+        margin-block-start: 1em;
+        margin-block-end: 0em;
+        padding-left: 2em;
+        height: 1.1em;
         width: 100%;
-        margin: 0px;
-        font-size: 2vw;
+    }
+
+    h2 {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        font-size: 1.5em;
+        padding: .2em;
+        height: 1em;
+        width: 14em;
     }
 
     #profile-pic {
        max-width: 100%;
        height: auto;
        position: center;
+       margin: 3em .5em 0em 1em;
     }
 }
 
 
 
 @media (max-width: 992px) {
-
+    nav {
+        width: 90%;
+    }
+    
+    h1 {
+        padding-left: 1em;
+    }
+    
+    h2{
+        padding: 0em;
+    }
 }
 
 @media (max-width: 768px) {
-   
+    main {
+        grid-template-columns: 20% 50% auto;
+    }
+
+    h1 {
+       width: 10em;
+   }
+
 }
 
 @media (max-width: 576px) {
-    body {
-        height: 80vh;
-    }
-
     
+body {
+    width: 90vw;
+    height: 70vh;
 }
 
+header {
+    height: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+
+#logo {
+    width: 100%;
+    height: 100%;
+    padding-left: 11.5em;
+}
+
+nav {
+    margin-top: 10px;
+    padding-left: 2em;
+}
+
+nav > a {
+    grid-row: 2/2;
+    padding: .5em;
+    background: rgba(3, 27, 247, 0.452);
+}
+
+main {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+h1 {
+    padding-top: 3em;
+    font-size: 1em;
+    grid-row: 1/2;
+}
+
+h2 {
+    padding-top: 5.5em;
+    font-size: 1em;
+    grid-row: 1/2;
+
+}
+
+button {
+    grid-row: 1/2;
+    margin-top: 5em;
+    width: 100%;
+    height: auto;
+    background: rgba(3, 27, 247, 0.452)
+}
+
+#profile-pic {
+    width: 45%;
+    height: 100%;
+    border-radius: 5%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+}
 
 
 
