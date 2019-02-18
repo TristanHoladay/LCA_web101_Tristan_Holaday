@@ -206,7 +206,7 @@ button {
     
     nav {
         margin-top: 10px;
-        margin-left: 10.5em;
+        margin-left: 12em;
     }
     
     nav > a {
@@ -216,7 +216,7 @@ button {
     }
     
     main {
-        grid-template-columns: 100px 1fr 100px;
+        grid-template-columns: 50px 1fr 100px;
         grid-template-rows: 40% 15% 25%;
     }
     
