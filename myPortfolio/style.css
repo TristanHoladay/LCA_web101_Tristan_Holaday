@@ -26,6 +26,8 @@ main {
 #logo {
     width: 100%;
     height: auto; 
+    padding-top: 1em;
+    padding-left: 1em;
     background-color: transparent;
     filter: saturate(5);
 }
