@@ -206,12 +206,12 @@ button {
     
     nav {
         margin-top: 10px;
-        margin-left: 15em;
+        margin-left: 10em;
     }
     
     nav > a {
         grid-row: 2/2;
-        padding-right: 2em;
+        padding-right: 1.8em;
         background: rgba(3, 27, 247, 0.452);
     }
     
