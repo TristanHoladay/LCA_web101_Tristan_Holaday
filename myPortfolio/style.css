@@ -185,71 +185,65 @@ button {
 
 @media (max-width: 576px) {
     
-body {
-    width: 90vw;
-    height: 70vh;
+    header {
+        height: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    
+    
+    #logo {
+        width: 100%;
+        height: 100%;
+        padding-left: 11em;
+    }
+    
+    nav {
+        margin-top: 10px;
+        padding-left: 5em;
+    }
+    
+    nav > a {
+        grid-row: 2/2;
+        padding: .5em;
+        background: rgba(3, 27, 247, 0.452);
+    }
+    
+    main {
+        grid-template-columns: 100px 1fr 100px;
+        grid-template-rows: 40% 25% 35%;
+    }
+    
+    h1 {
+        padding-top: 1em;
+        font-size: 1em;
+        grid-row: 2/3;
+    }
+    
+    h2 {
+        padding-top: 3em;
+        font-size: 1em;
+        grid-row: 2/3;
+        margin-left: 3em;
+    }
+    
+    button {
+        grid-column: 2/3;
+        grid-row: 3/3;
+        margin-left: 1.3em;
+        width: 100%;
+        height: auto;
+        background: rgba(3, 27, 247, 0.452)
+    }
+    
+    #profile-pic {
+        margin-left: 2em;
+        grid-column: 2/3;
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+        grid-row: 1/3;
+    }
+
+
 }
-
-header {
-    height: auto;
-    grid-template-columns: 100%;
-    grid-template-rows: 50% 50%;
-}
-
-
-#logo {
-    width: 100%;
-    height: 100%;
-    padding-left: 11.5em;
-}
-
-nav {
-    margin-top: 10px;
-    padding-left: 2em;
-}
-
-nav > a {
-    grid-row: 2/2;
-    padding: .5em;
-    background: rgba(3, 27, 247, 0.452);
-}
-
-main {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-}
-
-h1 {
-    padding-top: 3em;
-    font-size: 1em;
-    grid-row: 1/2;
-}
-
-h2 {
-    padding-top: 5.5em;
-    font-size: 1em;
-    grid-row: 1/2;
-
-}
-
-button {
-    grid-row: 1/2;
-    margin-top: 5em;
-    width: 100%;
-    height: auto;
-    background: rgba(3, 27, 247, 0.452)
-}
-
-#profile-pic {
-    width: 45%;
-    height: 100%;
-    border-radius: 5%;
-    grid-column: 1/3;
-    grid-row: 1/2;
-}
-}
-
-
-
-
-
