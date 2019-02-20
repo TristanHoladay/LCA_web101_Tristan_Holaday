@@ -203,3 +203,7 @@ footer {
         'top-box-b'
     }
 }
+
+@media print and (color), speech and (aspect-ratio: 11/5), screen and (orientation: portrait) {
+    
+}

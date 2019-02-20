@@ -3,7 +3,11 @@ body {
   font-style: Arial, helvetica, san serif;
   background: url(dashboard.jpeg);
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 /* Header */
@@ -23,6 +27,7 @@ body {
 
 .greeting img {
   border-radius: 50%;
+  object-fit: contain;
 }
 
 
@@ -192,11 +197,15 @@ header {
   .banner {
     background: purple;
     grid-area: banner;
+    display: flex;
+    padding: .2em;
   }
 
   footer {
     background: red;
     grid-area: footer;
+    text-align: center;
+    font-size: 2rem;
   }
 
   .container {
@@ -210,6 +219,8 @@ header {
       "footer";
   }
 
+  /* Having Issues with Keeping Background Image from Affecting the Responsiveness */
+
   @media (min-width: 500px) {
     .container {
       display: grid;
@@ -220,7 +231,5 @@ header {
         "aside   main" /* stack these horizontally, aside first, etc */
         "banner  footer";
     }
-
-    
     
   }
