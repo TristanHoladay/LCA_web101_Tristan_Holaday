@@ -1,16 +1,119 @@
-.container {
+ /* Header */
+body {
+  font-style: Arial, helvetica, san serif;
+  background: url(dashboard.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+ header {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 3rem;
+  font-size: 1.4em;
+  /* how come these don't move it to center?
+  align-content: center;
+  justify-content: center;  */
+}
+
+.greeting {
+  margin-left: 13.2em;
+}
+
+.greeting img {
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+
+ /* Navigation */
+.navigation ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  grid-gap: 5px;
+  padding: 0;
+}
+
+.navigation a {
+  display: block;
+  text-decoration: none;
+  padding: .6rem 1.3rem;
+  text-align: center;
+  background: rgb(2, 2, 82);
+  color: white; 
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.navigation a:hover {
+
+}
+
+/* Main */
+.main-container {
+    display: grid;
+    grid-gap: 20px;
+    padding: .2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        'title todo'
+        'Mcontent todo';
+    align-content: start;
+    justify-items: start;
+}
+
+.title {
+    grid-area: title;
+}
+
+.Mcontent {
+    grid-area: Mcontent;
+    text-align: left;
+}
+
+.todo ul {
+  background: #0000ff65; 
+  grid-area: todo;
+}
+
+.todo li {
+  padding: .5em .5em;
+}
+
+.todo .heading {
+    margin: .2em;
+}
+
+/* Aside */
+.aside {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .2em;
+  justify-items: center;
+  align-items: center;
+}
+
+.calc-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: .5em
+    grid-gap: .5em;
     border: solid 1px;
     border-radius: 5% 5%;
     width: 200px;
     height: 300px;
-    background: lightgrey;
+    background: rgba(211, 211, 211, 0.527);
+    margin-left: .3em;
   }
   
   .display {
-    margin: 1em;
+    margin: 1em .5em;
     grid-column: 1/5;
     width: 90%;
     height: 50px;
@@ -27,35 +130,87 @@
     background: darkgray;
   }
 
+  .calendar {
+    border: solid black 1px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+    width: 300px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.89);
+  }
+  
+  .header {
+    grid-column: 1 / 8;
+    grid-row: 1/2;
+    display: flex;
+    background: rgba(255, 255, 255, 0.534);
+    align-items: center;
+    justify-items: center;
+    border-bottom: solid black 1px;
+    margin-block-start: 0em;
+  }
+  
+  .weekdays {
+    grid-column: 1/8;
+    align-items: center;
+    margin-left: 1.8em;
+    margin-block-end: 0em;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 1em;
+  }
+  
+  .days {
+    grid-column: 1/8;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1em;
+    margin-block-start: 0em;
+  }
+  
+  .days li {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    list-style: none;
+    border: solid lightgrey 1px;
+    width: auto;
+    height: auto;
+  }
+
 header {
-    background: blue;
     grid-area: header;
   }
   main {
-    background: yellow;
     grid-area: main;
+    margin: 4em;
   }
   nav {
-    background: green;
     grid-area: nav;
   }
   aside {
-    background: orange;
     grid-area: aside;
   }
 
   .banner {
     background: purple;
     grid-area: banner;
+    display: flex;
+    padding: .2em;
   }
+
   footer {
     background: red;
     grid-area: footer;
+    text-align: center;
+    font-size: 2rem;
   }
 
   .container {
-    display: grid; /* Using the grid */
-    grid-template-areas: /* Notice how I've stacked my areas, just like they look on the page! */
+    display: grid; 
+    grid-template-areas: 
       "header"
       "nav"
       "main"
@@ -63,6 +218,8 @@ header {
       "banner"
       "footer";
   }
+
+  /* Having Issues with Keeping Background Image from Affecting the Responsiveness */
 
   @media (min-width: 500px) {
     .container {
@@ -74,8 +231,5 @@ header {
         "aside   main" /* stack these horizontally, aside first, etc */
         "banner  footer";
     }
-    nav ul {
-      display: flex;
-      justify-content: space-between;
-    }
+    
   }
