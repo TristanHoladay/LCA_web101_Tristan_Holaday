@@ -8,42 +8,116 @@
     <title>Dashboard</title>
 </head>
 <body>
-        <div id="container">
+        <div class="container">
                 <header>
-                    <div>Greeting</div>
+                    <div class="greeting">
+                      <img src="banner.jpeg" alt="">
+                    </div>
+                    <div class="date-time">It is: 11:40pm</div>
                 </header>
-                <nav>
+                
+                <!-- Navigation -->
+                <nav class="navigation">
                   <ul>
-                    <li><a href="#">nav 1</a></li>
-                    <li><a href="#">nav 2</a></li>
-                    <li><a href="#">nav 3</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </nav>
+
                 <main>
-                  <h1>Main Title</h1>
-                  <p>Main content</p>
-                  <div class="container">
-                        <input type="text" class="display">
-                        <input type="button" class="digitbutton" value="1">
-                        <input type="button" class="digitbutton" value="2">
-                        <input type="button" class="digitbutton" value="3">
-                        <input type="button" class="operator" value="+">
-                        <input type="button" class="digitbutton" value="4">
-                        <input type="button" class="digitbutton" value="5">
-                        <input type="button" class="digitbutton" value="6">
-                        <input type="button" class="operator" value="-">
-                        <input type="button" class="digitbutton" value="7">
-                        <input type="button" class="digitbutton" value="8">
-                        <input type="button" class="digitbutton" value="9">
-                        <input type="button" class="operator" value="*">
-                        <input type="button" class="digitbutton" value="c">
-                        <input type="button" class="digitbutton" value="0">
-                        <input type="button" class="digitbutton" value="=">
-                        <input type="button" class="operator" value="/">
-                      </div>
+                    <div class="main-container">
+                    <h1 class="title">This Is My Content</h1>
+                    <p class="Mcontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. At suscipit a molestiae amet. Voluptates ullam ipsum quae necessitatibus nobis sit a iusto esse, provident ad culpa aliquam exercitationem facere dolores ipsa. Nihil totam eum molestias quis sapiente eligendi accusamus? Voluptatum.</p>
+                    <!-- To Do List -->
+                    <section class="todo">
+                      <ul>
+                        <h3 class="todo heading">To Do List</h3>
+                        <h4 class="todo heading">Input Task and Save</h4>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                        <li><input type="text" class=input></li>
+                      </ul>
+                    </section>
+                    </div>
                 </main>
-                <aside>
-                        
+                <aside class="aside">
+                  <!-- Calculator -->
+                  <div class="calc-container">
+                    <input type="text" class="display">
+                    <input type="button" class="digitbutton" value="1">
+                    <input type="button" class="digitbutton" value="2">
+                    <input type="button" class="digitbutton" value="3">
+                    <input type="button" class="operator" value="+">
+                    <input type="button" class="digitbutton" value="4">
+                    <input type="button" class="digitbutton" value="5">
+                    <input type="button" class="digitbutton" value="6">
+                    <input type="button" class="operator" value="-">
+                    <input type="button" class="digitbutton" value="7">
+                    <input type="button" class="digitbutton" value="8">
+                    <input type="button" class="digitbutton" value="9">
+                    <input type="button" class="operator" value="*">
+                    <input type="button" class="digitbutton" value="c">
+                    <input type="button" class="digitbutton" value="0">
+                    <input type="button" class="digitbutton" value="=">
+                    <input type="button" class="operator" value="/">
+                  </div>
+
+                  <!-- Calendar -->                 
+                      <div class="calendar">
+                        <header class="header">
+                          <h1>March 2019</h1>
+                        </header>
+                        <ul class="weekdays">
+                          <li>S</li>
+                          <li>M</li>
+                          <li>T</li>
+                          <li>W</li>
+                          <li>T</li>
+                          <li>F</li>
+                          <li>S</li>
+                         </ul>
+                        <ul class="days">
+                          <li>1</li>
+                          <li>2</li>
+                          <li>3</li>
+                          <li>4</li>
+                          <li>5</li>
+                          <li>6</li>
+                          <li>7</li>
+                          <li>8</li>
+                          <li>9</li>
+                          <li>10</li>
+                          <li>11</li>
+                          <li>12</li>
+                          <li>13</li>
+                          <li>14</li>
+                          <li>15</li>
+                          <li>16</li>
+                          <li>17</li>
+                          <li>18</li>
+                          <li>19</li>
+                          <li>20</li>
+                          <li>21</li>
+                          <li>22</li>
+                          <li>23</li>
+                          <li>24</li>
+                          <li>25</li>
+                          <li>26</li>
+                          <li>27</li>
+                          <li>28</li>
+                          <li>29</li>
+                          <li>30</li>
+                          <li>31</li>
+                        </ul>
+                      </div>
+                    
                 </aside>
                 <div class="banner"></div>
                 <footer>footer</footer>
