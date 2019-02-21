@@ -13,9 +13,8 @@
         <div class="container">
                 <header>
                     <div class="greeting">
-                      <img src="banner.jpeg" alt="">
+                        <img src="banner.jpeg" alt="">
                     </div>
-                    <div class="date-time">It is: 11:40pm</div>
                 </header>
                 
                 <!-- Navigation -->
@@ -29,8 +28,10 @@
 
                 <main>
                     <div class="main-container">
+                    <div class="content-container">
                     <h1 class="title">This Is My Content</h1>
                     <p class="Mcontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. At suscipit a molestiae amet. Voluptates ullam ipsum quae necessitatibus nobis sit a iusto esse, provident ad culpa aliquam exercitationem facere dolores ipsa. Nihil totam eum molestias quis sapiente eligendi accusamus? Voluptatum.</p>
+                    </div>
                     <!-- To Do List -->
                     <section class="todo">
                       <ul>
@@ -124,6 +125,29 @@
                 <div class="banner">
                   <i class="far fa-clock fa-4x"></i>
                   <h2 class="time">It is " "pm</h2>
+                  <!-- Flex Calculator -->
+                  <form id="calculator" class="flex-calc-container">
+                    <div id="display" class="flex-display"></div>
+                    <div class="btns-container">
+                    <input type="button" class="num-btn" value="1" onclick="calculator.display.value += '1'">
+                    <input type="button" class="num-btn" value="2">
+                    <input type="button" class="num-btn" value="3">
+                    <input type="button" class="op-btn" value="+">
+                    <input type="button" class="num-btn" value="4">
+                    <input type="button" class="num-btn" value="5">
+                    <input type="button" class="num-btn" value="6">
+                    <input type="button" class="op-btn" value="-">
+                    <input type="button" class="num-btn" value="7">
+                    <input type="button" class="num-btn" value="8">
+                    <input type="button" class="num-btn" value="9">
+                    <input type="button" class="op-btn" value="*">
+                    <input type="button" class="num-btn" value="Cl">
+                    <input type="button" class="num-btn" value="0">
+                    <input type="button" class="num-btn" value="=">
+                    <input type="button" class="op-btn" value="/">
+                  </div>
+                </form>
+                 
                 </div>
                 <footer>
                   "Famous Quote of the Day!"
