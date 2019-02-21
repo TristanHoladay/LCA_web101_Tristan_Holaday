@@ -1,33 +1,30 @@
  /* Header */
-body {
+ body {
   font-style: Arial, helvetica, san serif;
   background: url(dashboard.jpeg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  width: 100%;
-  height: 100%;
 }
 
 /* Header */
  header {
   display: grid;
   grid-template-columns: 1fr;
-  padding-left: 3rem;
-  font-size: 1.4em;
-  /* how come these don't move it to center?
   align-content: center;
-  justify-content: center;  */
+  justify-content: center; 
+  object-fit: contain;
 }
 
 .greeting {
-  margin-left: 13.2em;
+  margin-left: 2em;
 }
 
 .greeting img {
   border-radius: 50%;
-  object-fit: contain;
+  width: 90%;
+  height: 90%;
 }
 
 
@@ -194,11 +191,55 @@ header {
     grid-area: aside;
   }
 
+  /* Banner with Flex Calculator */
   .banner {
     background: purple;
     grid-area: banner;
     display: flex;
+    justify-content: space-between;
     padding: .2em;
+  }
+
+  .flex-calc-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 300px;
+    height: auto;
+    background: lightgrey;
+    border: solid black 1px;
+  }
+  
+  .flex-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(43, 129, 43);
+    background: rgb(209, 200, 200);
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    width: 100%;
+    height: 4rem;
+    margin: 1em 3em;
+  }
+  
+  .btns-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: stretch;
+    margin: .3em;
+  }
+  .num-btn {
+    display: block;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .op-btn {
+    display: block;
+    width: 80px;
+    height: auto;
+    color: red;
   }
 
   footer {
@@ -232,4 +273,33 @@ header {
         "banner  footer";
     }
     
+  }
+
+  @media (min-width: 900px) {
+    
+    .container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    }
+
+    .navigation ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    .navigation a {
+      width: 15rem;
+      height: auto;
+    }
+    .greeting {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+    
+    .greeting img {
+      width: 500px;
+      height: auto;
+    }
   }
