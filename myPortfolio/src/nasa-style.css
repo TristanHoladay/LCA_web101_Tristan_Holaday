@@ -1,0 +1,26 @@
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+}
+
+#nasa {
+    width: 850px;
+    height: 450px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgb(230,230,230);
+    width: 100%;
+    height: auto;
+}
+
