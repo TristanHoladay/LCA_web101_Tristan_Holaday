@@ -1,5 +1,5 @@
 header {
-    margin-bottom: 30px;
+    margin-bottom: 1em;
 }
 
 header h1 {
@@ -12,7 +12,7 @@ header h1 {
 }
 
 #nasa {
-    width: 850px;
+    width: 100%;
     height: 450px;
 }
 
@@ -24,3 +24,99 @@ main {
     height: auto;
 }
 
+article {
+    padding: 0em 2em;
+    font-size: 1.2rem;   
+}
+
+#info {
+    padding: 0em 2.5em;
+} 
+
+#info ul {
+    list-style: none;
+    position: relative;
+    right: 2.2em;
+}
+
+#info ul li {
+    margin: .5em 0em;
+}
+
+.medias {
+    list-style: none;
+    position: relative;
+    right: 2.2em;
+}
+
+.medias li {
+    margin: .5em 0em;
+}
+
+input[type=text] {
+    display: block;
+    margin: .5em 0em;
+}
+
+#form-name {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 340px;
+    height: 2em;
+}
+
+#form-message {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 340px;
+    height: 6em;
+}
+
+
+input[type=button] {
+    width: 5rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background: rgb(41, 39, 39);
+    border: none;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+}
+
+
+@media (max-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: rgb(230,230,230);
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        background: rgb(230,230,230);
+        width: 100%;
+        height: auto;
+        justify-items: center;
+    }
+
+    #social {
+        border-bottom: solid 1px;
+    }
+
+    #info {
+        padding: 0em 2em;
+        border-bottom: solid 1px;
+    }
+
+    #contact {
+        min-width: 275px;
+    }
+
+}
