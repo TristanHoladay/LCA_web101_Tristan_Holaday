@@ -1,10 +1,9 @@
- /* Header */
- body {
-  font-style: Arial, helvetica, san serif;
-  background: url(dashboard.jpeg);
-  background-size: 100% 100%;
+body {
+  font-family: 'Laila', serif;
+  min-height: 100%;
+  background-image: url(sky_pic.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
   background-attachment: fixed;
 }
 
@@ -15,26 +14,29 @@
   align-content: center;
   justify-content: center; 
   object-fit: contain;
+  color: rgb(104, 190, 190);
+  background: url(rocks-background.jpeg);
+  grid-area: header;
 }
 
 .greeting {
-  margin-left: 2em;
-}
-
-.greeting img {
-  border-radius: 50%;
-  width: 90%;
-  height: 90%;
+  padding: 2rem;
+  text-align: center;
 }
 
 
  /* Navigation */
+ nav {
+  grid-area: nav;
+}
+
 .navigation ul {
   display: grid;
   grid-template-columns: 1fr;
   list-style: none;
   grid-gap: 5px;
   padding: 0;
+  width: 400px;
 }
 
 .navigation a {
@@ -49,82 +51,135 @@
   box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-.navigation a:hover {
-
-}
 
 /* Main */
 .main-container {
-    display: grid;
+    width: 100%;
+    height: 90%;
+    margin-bottom: 10px;
     grid-gap: 20px;
     padding: .2rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-        'title todo'
-        'Mcontent todo';
+    font-size: 1.3em;
+    color: rgb(236, 120, 120);
     align-content: start;
     justify-items: start;
+    background: rgba(245, 234, 237, 0.993);
+    grid-area: main;
 }
 
-.title {
-    grid-area: title;
-}
-
-.Mcontent {
-    grid-area: Mcontent;
-    text-align: left;
-}
-
-.todo ul {
-  background: #0000ff65; 
-  grid-area: todo;
-}
-
-.todo li {
-  padding: .5em .5em;
-}
-
-.todo .heading {
-    margin: .2em;
-}
 
 /* Aside */
 .aside {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: .2em;
-  justify-items: center;
-  align-items: center;
+  justify-items: start;
+  align-items: start;
+  margin-bottom: 10px;
+  grid-area: aside;
 }
 
-.calc-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: .5em;
-    border: solid 1px;
-    border-radius: 5% 5%;
-    width: 200px;
-    height: 300px;
-    background: rgba(211, 211, 211, 0.527);
-    margin-left: .3em;
-  }
-  
-  .display {
-    margin: 1em .5em;
-    grid-column: 1/5;
-    width: 90%;
-    height: 50px;
-  }
-  
-  .digitbutton {
+.todo {
+  width: 100%;
+  height: auto;
+  background: #0000ff65;
+  margin-bottom: 2em;
+}
+
+.todo ul {
+  grid-area: todo;
+  list-style: upper-roman; 
+}
+
+.todo li {
+  padding: .5em .5em;
+}
+
+.todo input[type=text] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 30em;
+  height: 2.5em;
+}
+
+.todo_heading {
+    padding: .3em;
     margin: .2em;
-    background: lightblue;
+    text-decoration: underline;
+}
+
+#todo-button {
+  position: relative;
+  left: 3.5em;
+  bottom: 1em;
+  width: 5em;
+  height: 2em;
+}
+
+.flex-calc-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 275px;
+  height: auto;
+  background: rgba(211, 211, 211, 0.596);
+  border: solid black 1px;
+}
+
+.flex-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(43, 129, 43);
+  background: rgba(209, 200, 200, 0.781);
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  width: 100%;
+  height: 4rem;
+  margin: 1em 3em;
+}
+
+.btns-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: stretch;
+  margin: .3em;
+}
+.num-btn {
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+
+.op-btn {
+  display: block;
+  width: 70px;
+  height: auto;
+  color: red;
+}
+
+
+   /* Banner  */
+  .banner {
+    background: url(DB_Header_IMG.jpeg);
+    background-size: cover;
+    box-shadow: 25px 25px 50px 0 rgb(138,198,250) inset, -25px -25px 50px 0 rgb(138,198,250) inset; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: .2em;
+    width: 100%;
+    margin-bottom: 10px;
+    color: black;
+    grid-area: banner;
   }
-  
-  .operator {
-    padding: .1em;
-    margin: .3em;
-    background: darkgray;
+
+  .time-container {
+    background: lightgrey;
+  }
+
+  .icon {
+    margin: 0em 1em;
   }
 
   .calendar {
@@ -134,16 +189,17 @@
     grid-gap: 2px;
     width: 300px;
     height: auto;
-    background: rgba(255, 255, 255, 0.89);
+    background: rgba(255, 255, 255, 0.226);
   }
   
-  .header {
-    grid-column: 1 / 8;
+  .heading {
+    grid-column: 1/9;
     grid-row: 1/2;
     display: flex;
-    background: rgba(255, 255, 255, 0.534);
+    background: rgba(255, 255, 255, 0.438);
     align-items: center;
-    justify-items: center;
+    justify-items: start;
+    color: black;
     border-bottom: solid black 1px;
     margin-block-start: 0em;
   }
@@ -151,20 +207,26 @@
   .weekdays {
     grid-column: 1/8;
     align-items: center;
-    margin-left: 1.8em;
     margin-block-end: 0em;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 1em;
+    text-decoration: underline;
+  }
+
+  .weekdays li {
+    grid-gap: 2em;
   }
   
   .days {
     grid-column: 1/8;
     display: grid;
+    padding: .3em;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 1em;
+    grid-gap: .7em;
     margin-block-start: 0em;
+
   }
   
   .days li {
@@ -175,104 +237,63 @@
     border: solid lightgrey 1px;
     width: auto;
     height: auto;
+    border: 1px solid black;
   }
 
-header {
-    grid-area: header;
-  }
-  main {
-    grid-area: main;
-    margin: 4em;
-  }
-  nav {
-    grid-area: nav;
-  }
-  aside {
-    grid-area: aside;
-  }
-
-  /* Banner with Flex Calculator */
-  .banner {
-    background: purple;
-    grid-area: banner;
-    display: flex;
-    justify-content: space-between;
-    padding: .2em;
-  }
-
-  .flex-calc-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 300px;
-    height: auto;
-    background: lightgrey;
-    border: solid black 1px;
-  }
-  
-  .flex-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(43, 129, 43);
-    background: rgb(209, 200, 200);
-    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-    width: 100%;
-    height: 4rem;
-    margin: 1em 3em;
-  }
-  
-  .btns-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    align-items: stretch;
-    margin: .3em;
-  }
-  .num-btn {
-    display: block;
-    width: 70px;
-    height: 70px;
-  }
-  
-  .op-btn {
-    display: block;
-    width: 80px;
-    height: auto;
-    color: red;
-  }
-
+  /* Footer */
   footer {
-    background: red;
     grid-area: footer;
     text-align: center;
     font-size: 2rem;
+    width: 400px;
+    height: auto;
   }
 
+  footer p {
+    position: relative;
+    top: 1em;
+  }
+
+  #footer-p-link {
+    display: block;
+    color: black;
+    font-size: .5em;
+    margin-top: 4em;
+  }
+
+/* Ordering */
   .container {
     display: grid; 
+    justify-items: center;
     grid-template-areas: 
       "header"
       "nav"
+      "banner"
       "main"
       "aside"
-      "banner"
       "footer";
   }
-
+  
   /* Having Issues with Keeping Background Image from Affecting the Responsiveness */
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     .container {
       display: grid;
-      grid-template-columns: 1fr 3fr; /* the first column is 1 unit (fraction), the second column is 3 units */
-      grid-template-areas: /* stack the components how you want them to appear in the columns */
-        "header  header" /* stretch header across both columns at the top */
+      grid-template-columns: 1fr 3fr; 
+      grid-template-areas: 
+        "header  header"
         "nav     nav"
-        "aside   main" /* stack these horizontally, aside first, etc */
-        "banner  footer";
+        "aside   main" 
+        "banner  banner"
+        ". footer";
     }
-    
+
+    #time {
+      margin-right: 5em;
+    }
+
+    }
+
   }
 
   @media (min-width: 900px) {
@@ -302,4 +323,6 @@ header {
       width: 500px;
       height: auto;
     }
+
   }
+
