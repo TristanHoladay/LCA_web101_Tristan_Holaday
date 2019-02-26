@@ -1,0 +1,55 @@
+body a, ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+#fixed-ribbon {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    background: rgb(190, 186, 186);
+    width: 100%;
+    height: auto; 
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#fixed-ribbon h1 {
+       font-size: 1em;
+}
+
+#fixed-ribbon_nav {
+    font-size: .9em;
+}
+
+#secondribbon {
+    margin-top: 6em;
+    width: 100%;
+    height: auto;
+    background: rgb(76,143,150);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#name {
+    position: relative;
+    bottom: 20px;
+    width: 5em;
+    height: auto;
+    font-size: 3em;
+    padding: 1em 0;
+    color: white;
+    background: rgb(34,41,66);
+    border: 1px solid black;
+    text-align: center;
+}
+
+#secondribbon_nav a {
+    width: 100%;
+    color: white;
+    background: rgb(34,41,66);
+}
+
+
