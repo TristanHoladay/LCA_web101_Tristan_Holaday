@@ -46,8 +46,11 @@ body a, ul {
     text-align: center;
 }
 
+#secondribbon_nav ul {
+    border: 1px dashed red;
+}
+
 #secondribbon_nav a {
-    width: 100%;
     color: white;
     background: rgb(34,41,66);
 }
