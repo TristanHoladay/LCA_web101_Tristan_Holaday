@@ -49,7 +49,7 @@ body a, ul {
 
 #secondribbon_nav ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     justify-items: start;
 }
 
@@ -154,7 +154,7 @@ body a, ul {
     text-align: center;
 }
 
-#extras-featured h2 {
+#extras-featured h3 {
     position: relative;
     bottom: 1em;
     left: .5em;
@@ -227,7 +227,7 @@ footer h4 {
     display: inline-block;
     padding: .4em;
     margin-top: .5em;
-    margin-left: 4em;
+    margin-left: 2em;
 }
 
 #social-med-icons a{
@@ -292,9 +292,6 @@ footer h4 {
     #highlights{
         margin: 3em 0em;
     }
-
-    
-    
     
     /*  will move top nav over to right 
     #fixed-ribbon {
