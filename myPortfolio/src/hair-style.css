@@ -107,6 +107,10 @@ body a, ul {
     border-radius: 5px 5px;
 }
 
+#fourthimg {
+    width: 80%;
+}
+
 #extras-main-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -116,9 +120,7 @@ body a, ul {
     margin: 1em;
 }
 
-#fourthimg {
-    width: 80%;
-}
+
 
 #extras-featured {
     width: 100%;
@@ -130,9 +132,12 @@ body a, ul {
 }
 
 #extras-featured img {
+    display: inline;
+    float: left;
     width: 150px;
     height: auto;
-    margin: 0em 1.1em;
+    margin-left: 1.1em;
+    margin-bottom: 1em;
 }
 
 .container-heading {
@@ -150,11 +155,13 @@ body a, ul {
 }
 
 #extras-featured h2 {
-    display: inline;
-    float: right;
-    margin-right: .4em;
     position: relative;
     bottom: 1em;
+    left: .5em;
+}
+
+#extras-featured p {
+    clear: both;
 }
 
 #extras-hairstyle {
@@ -226,3 +233,76 @@ footer h4 {
 #social-med-icons a{
     color: rgb(27,96,104);
 }
+
+
+@media all and (min-width: 750px) {
+  
+    #secondribbon_nav ul {
+        display: flex;
+    }
+  
+  
+    #extras-main-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 2em;
+        justify-items: center;
+        width: 100%;
+        height: auto;
+        margin: 1em;
+    }
+
+    #extras-featured {
+        grid-column: 1/2;
+        grid-row: span 3;
+    }
+
+
+    #social-med-icons {
+        margin-left: 7em;
+    }
+
+ 
+@media all and (min-width: 1200px) {
+    
+    #secondribbon {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: end;
+    }
+
+    #name {
+        position: relative;
+        top: .8em;
+        left: 2.3em;
+        padding: 1em;
+        font-size: 3.5em;
+    }
+
+    .featureimage {
+        margin-top: 5em;
+        background: rgb(247,247,249);
+    }
+
+    .featureimage img {
+        width: 50%;
+    }
+
+    #highlights{
+        margin: 3em 0em;
+    }
+
+    
+    
+    
+    /*  will move top nav over to right 
+    #fixed-ribbon {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #fixed-ribbon_nav {
+        grid-column: 2/3;
+     }  */
+ } 
