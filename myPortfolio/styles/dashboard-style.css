@@ -1,7 +1,7 @@
 body {
   font-family: 'Laila', serif;
   min-height: 100%;
-  background-image: url(sky_pic.jpeg);
+  background-image: url(../images/sky_pic.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,7 +15,7 @@ body {
   justify-content: center; 
   object-fit: contain;
   color: rgb(104, 190, 190);
-  background: url(rocks-background.jpeg);
+  background: url(../images/rocks-background.jpeg);
   grid-area: header;
 }
 
@@ -164,7 +164,7 @@ body {
 
    /* Banner  */
   .banner {
-    background: url(DB_Header_IMG.jpeg);
+    background: url(../images/DB_Header_IMG.jpeg);
     background-size: cover;
     box-shadow: 25px 25px 50px 0 rgb(138,198,250) inset, -25px -25px 50px 0 rgb(138,198,250) inset; 
     display: flex;
