@@ -4,20 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/portfolio-style.css">
     <title>Portfolio</title>
 </head>
 <body>
-    <header>
-
+    <header id="banner">
+        <div class="welcome">
+            <h1>Welcome to My Web Developer Portfolio</h1>
+        </div>
     </header>
     <main>
-        <section>
-            <a href="dashboard.html">Dashboard</a>
-            <br>
-            <a href="nasa.html">Nasa Landing Page</a>
-            <br>
-            <a href="hair.html">Hair Salon Landing Page</a>
-        </section>
+        <div id="video">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/5881Jq1WUOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Projects Display -->
+        <div id="projects-container">
+            <h1>Check Out My Projects</h1>
+            <div class="project">
+               <a href="dashboard.html">
+                  <img src="../images/dashboardSS_big.png" alt="Screenshot of a Dashboard Project.">
+                </a>
+            </div>
+            <div class="project">
+                <a href="nasa.html">
+                    <img src="../images/nasaSS_big.png" alt="Screenshot of a Dashboard Project.">
+                </a>
+            </div>
+            <div class="project">
+                <a href="hair.html">
+                    <img src="../images/hairsalonSS_big.png" alt="Screenshot of a Dashboard Project.">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Email Submission Form -->
+        <footer>
+            <h1>Want to See More!?</h1>
+            <span>Fill Out the Form Below</span>
+            <form action="email" id="email-form" method="POST">
+                <label for="fname">First Name:
+                    <input type="text" name="fname" placeholder="First Name...">
+                </label>
+                <label for="lname">Last Name:
+                    <input type="text" name="lname" placeholder="Last Name...">
+                </label>
+                <label for="email">Email:
+                    <input type="email" name="email" placeholder="Valid Email Address...">
+                </label>
+                <label for="location">Location:
+                    <input type="text" name="location" placeholder="Location...">
+                </label>
+                <label for="message">Message:
+                    <textarea name="message" id="message" placeholder="Tell Me About What You're Looking For..."></textarea>
+                </label>
+            </form>
+        </footer>
     </main>
 </body>
 </html>
