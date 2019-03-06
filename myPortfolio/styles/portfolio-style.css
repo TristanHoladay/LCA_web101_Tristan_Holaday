@@ -1,30 +1,186 @@
 body {
-    background: darkslategray;
+    background: rgb(89, 102, 104);
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: 'Slabo 27px', serif;
 }
 
-header {
+#banner {
     text-align: center;
+    color: rgb(8, 119, 119);
+    background: rgb(245, 248, 248);
+    border: 3px ridge rgb(132, 130, 168);
+    padding: 2em;
+    margin: 1em;
+}
+
+.welcome {
+    border: 3px outset rgb(132, 130, 168);
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    margin: 1em 0em;
+}
+
+#video span {
+    font-size: 1.5em;
 }
 
 #projects-container {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    justify-content: center;
+    width: 100%;
+    background: rgb(245, 248, 248);
+    border: 3px inset rgb(132, 130, 168);
 }
 
+
+#projects-container h1 {
+    height: auto;
+    text-align: center;
+    margin: 1em;
+    padding: .3em;
+    color: rgb(8, 119, 119);
+    border: 2px dotted rgb(101, 143, 143);
+    border-radius: 3px 3px;
+}
+
+
 .project {
-    align-content: center;
-    border: 1px solid red;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: .5em 0em;
 }
 
 .project img {
     width: 70%;
     height: auto;
+    margin-left: 4em;
+    box-shadow: 3px 3px 2px 4px rgb(241, 192, 192);
+    transition: all .2 ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: 2em;
+}
+
+footer h1 {
+    margin-block-end: 0em;
+}
+
+form {
+    width: 40%;
+    height: auto;
+}
+
+label {
+    display: block;
+    margin: .5em 0em;
+}
+
+label>span {
+    float: left;
+    width: 50%;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+    border: 2px solid rgb(211, 205, 205);
+    border-radius: 2px 2px;
+}
+
+input:focus {
+    border: 2px solid rgb(151, 211, 211);
+}
+
+#message {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.form-button {
+    width: 40%;
+    height: 2em;
+    margin-right: 1em;
 }
 
 
 
-label {
-    display: block;
+@media (min-width: 1200px) {
+
+    #mcontainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        background: rgb(245, 248, 248);
+        border: 3px ridge rgb(132, 130, 168);
+    }
+
+    #video {
+        width: 50%;
+        margin: 2em;
+    }
+
+   #projects-container {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       width: 90%;
+       margin: 1em 0;
+   }
+
+   #projects-container h1 {
+       height: 50px;
+       margin-left: 15em;
+   }
+
+   .project {
+       width: 50%;
+   }
+
+
+   form {
+       width: 30%
+   }
+
+   label {
+       margin: 1em 0;
+   }
+
+   label>span {
+       width: 5em;
+   }
+
+   input {
+       width: 75%;
+   }
+
+   #message {
+       width: 75%;
+       height: 4em;
+   }
+
+   #form-buttons {
+       margin-left: 12.5em;
+   }
+
+   .form-button {
+       background: white;
+   }
+
 }
