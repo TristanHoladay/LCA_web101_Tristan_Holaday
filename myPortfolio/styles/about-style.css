@@ -1,0 +1,52 @@
+header {
+    font-size: 2em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.imagewrapper {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: blue;
+    min-width: 400px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.DC-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1em;
+}
+
+.pics-container {
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.pics-container img {
+    min-width: 100px;
+    max-width: 100%;
+    height: auto;
+}
