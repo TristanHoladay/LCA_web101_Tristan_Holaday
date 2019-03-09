@@ -1,3 +1,8 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     font-size: 2em;
     text-align: center;
@@ -10,17 +15,63 @@ main {
     justify-content: center;
 }
 
+.intro-container {
+    display: flex;
+    justify-content: center;
+    background: palegreen;
+}
+
+
+#introduction {
+    width: 70%;
+}
+
 .imagewrapper {
     border: 1px solid red;
     text-align: center;
 }
 
+ .imagewrapper img {
+    width: 90%;
+    height: auto;
+}
+
+#music .imagewrapper h2 {
+    position: absolute;
+    bottom: 85%;
+    left: 10%;
+    border: 1px solid black;
+    background: white;
+    padding: .2em;
+}
+
+#logic .imagewrapper h2 {
+    position: absolute;
+    bottom: 92.5%;
+    left: 10%;
+    border: 1px solid black;
+    background: white;
+    padding: .2em;
+}
+
+#interests .imagewrapper h2 {
+    position: absolute;
+    bottom: 94%;
+    left: 10%;
+    border: 1px solid black;
+    background: white;
+    padding: .2em;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 2em 0;
 }
 
 .dropdown-content {
+    box-sizing: border-box;
+    width: 100%;
     display: none;
     position: relative;
     background-color: blue;
@@ -50,3 +101,4 @@ main {
     max-width: 100%;
     height: auto;
 }
+
