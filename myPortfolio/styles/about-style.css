@@ -42,6 +42,8 @@ main {
 }
 
  .imagewrapper img {
+    margin: 0;
+    padding: 0;
     width: 90%;
     height: auto;
 }
@@ -77,18 +79,21 @@ main {
 }
 
 .dropdown {
+    width: 100%;
+    border: 1px solid;
     position: relative;
     display: inline-block;
     margin: 2em 0;
+    padding: 0;
 }
 
 .dropdown-content {
     box-sizing: border-box;
-    width: 100%;
     display: none;
     position: relative;
     background-color: blue;
-    min-width: 400px;
+    max-width: 100%;
+    min-width: 350px;
     z-index: 1;
     background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
     background-color: mediumspringgreen;
@@ -97,7 +102,8 @@ main {
 }
 
 .dropdown:hover .dropdown-content {
-    display: grid;
+    display: block;
+    transition-timing-function: ease;
 }
 
 .DC-container {
@@ -127,6 +133,37 @@ main {
 footer {
     display: flex;
     justify-content: center;
+}
+
+@media (min-width: 900px) {
+    main {
+        display: flex;
+        flex-wrap: none;
+        justify-content: space-around;
+    }
+
+    .intro-container {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .imagewrapper {
+        width: 70%;
+    }
+
+    .imagewrapper img {
+        width: 70%;
+        height: auto;
+    }
+
+    .dropdown {
+        width:70%;
+    }
+
+    .dropdown-content {
+        max-width: 70%;
+    }
+
 }
 
 body {
