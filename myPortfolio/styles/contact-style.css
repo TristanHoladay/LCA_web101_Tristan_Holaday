@@ -42,13 +42,14 @@ nav ul li ul li a {
 main {
    display: grid;
    grid-template-columns: 1fr;
+   color: rgb(6, 6, 7);
+   margin-bottom: 2em;
 }
 
 #reasons {
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
-    border: 1px solid;
 }
 
 #reasons-to {
@@ -122,3 +123,46 @@ label>input {
     background: rgba(255, 255, 255, 0.493);
 }
 
+
+@media (min-width: 900px) {
+    header {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #invite {
+        font-size: 2em;
+        margin-left: 1em;
+    }
+
+    header nav {
+        margin-left: 4em;
+    }
+
+    Main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #reasons {
+        box-sizing: border-box;
+        grid-column: 2/3;
+        margin-left: 3em;
+        width: 80%;
+    }
+
+    #reasons-to {
+        margin-left: 2em;
+    }
+
+    #reasons-not {
+        margin-left: 2em;
+    }
+
+    form {
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+
+}
