@@ -7,14 +7,22 @@ html, body {
 header {
     display: flex;
     flex-flow: row wrap;
+    justify-items: center;
     font-size: 2em;
     text-align: center;
     background: rgba(217, 189, 224, 0.568);
+    border: 2px solid rgb(103, 151, 93);
 }
 
 header h1 {
     width: 100%;
     color: rgb(103, 151, 93);
+}
+
+pre {
+    width: 100%;
+    height: auto; 
+    font-size: .5em;
 }
 
 main {
@@ -23,6 +31,7 @@ main {
     width: 100%;
     justify-content: center;
 }
+
 
 .intro-container {
     display: flex;
@@ -33,6 +42,8 @@ main {
     width: 70%;
     font-size: 1.1em;
     background: rgba(217, 189, 224, 0.568);
+    border: 2px solid rgb(103, 151, 93);
+    border-top: 0;
     margin-top: 0;
     padding: 0 .5em;
 }
@@ -44,14 +55,14 @@ main {
  .imagewrapper img {
     margin: 0;
     padding: 0;
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
 #music .imagewrapper h2 {
     color: rgb(103, 151, 93);
     position: absolute;
-    bottom: 85%;
+    top: -11%;
     left: 10%;
     border: 1px solid black;
     background: rgba(255, 255, 255, 0.644);
@@ -78,9 +89,12 @@ main {
     padding: .2em;
 }
 
+#interests ul {
+    list-style: none;
+}
+
 .dropdown {
     width: 100%;
-    border: 1px solid;
     position: relative;
     display: inline-block;
     margin: 2em 0;
@@ -103,7 +117,10 @@ main {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    transition-timing-function: ease;
+}
+
+.dropdown:hover .imagewrapper h2 {
+    display: none;
 }
 
 .DC-container {
@@ -116,18 +133,33 @@ main {
     grid-column: 1/2;
 }
 
+.DC-container blockquote {
+    grid-column: 2/3;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.story-text {
+    margin-left: 1em;
+}
+
 .pics-container {
     grid-column: 2/3;
-    display: flexbox;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-items: space-around;
     width: 100%;
     height: auto;
 }
 
 .pics-container img {
-    min-width: 100px;
+    box-sizing: border-box;
     max-width: 100%;
     height: auto;
+    border: 3px solid white;
+    margin: 5px;
 }
 
 footer {
@@ -136,34 +168,44 @@ footer {
 }
 
 @media (min-width: 900px) {
+    pre {
+        font-size: 1em;
+    }
+   
     main {
-        display: flex;
-        flex-wrap: none;
-        justify-content: space-around;
+        margin: 0 1em;
     }
 
-    .intro-container {
-        display: flex;
-        justify-content: flex-start;
+   .intro-container {
+       width: 100%;
+   }
+
+    #music {
+        width: 60%;
     }
 
-    .imagewrapper {
-        width: 70%;
+    #music .imagewrapper h2 {
+        top: -7%;
+        padding: 10px;
     }
 
-    .imagewrapper img {
-        width: 70%;
-        height: auto;
+    #logic {
+        width: 40%;
     }
 
-    .dropdown {
-        width:70%;
+    #logic .imagewrapper h2 {
+        bottom: 94.5%;
+        padding: 10px
     }
 
-    .dropdown-content {
-        max-width: 70%;
+    #interests {
+        width: 40%;
     }
 
+    #interests .imagewrapper h2 {
+        padding: 10px;
+        bottom: 
+    }
 }
 
 body {
