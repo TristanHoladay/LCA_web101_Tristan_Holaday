@@ -1,0 +1,74 @@
+#squares-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.squares {
+    width: 50px;
+    height: 50px;
+    margin: 2em;
+    border: 1px solid;
+    transition: all 7s ease-in-out;
+}
+
+.even {
+    transition: all 4s ease-in-out;
+}
+
+.one {
+    background: blue;
+}
+
+.two {
+    background: green;
+}
+
+.three {
+    background: yellow;
+}
+
+.four {
+    background: purple;
+}
+
+.five {
+    background: red;
+}
+
+.six {
+    background: rgb(255, 81, 0);
+}
+
+.seven {
+    background: pink;
+}
+
+.eight {
+    background: grey;
+}
+
+.nine {
+    background: rgb(154, 177, 26);
+}
+
+.ten {
+    background: teal;
+}
+
+.eleven {
+    background: rgb(112, 221, 112);
+}
+
+.twelve {
+    background: rgb(145, 39, 39);
+}
+
+
+#squares-container:hover div:nth-of-type(2n) {
+    transform: scale(.5) translateX(-2475%) rotate(-360deg);
+}
+
+#squares-container:hover div:nth-of-type(odd) {
+    transform: scale(2.0) translateX(575%) rotateZ(360deg);
+}
