@@ -16,20 +16,24 @@
 <!-- Game Board -->
 <main>
     <div id="board-container">
-        <div id="sq1" class="squares"></div>
-        <div id="sq2" class="squares"></div>
-        <div id="sq3" class="squares"></div>
-        <div id="sq4" class="squares"></div>
-        <div id="sq5" class="squares"></div>
-        <div id="sq6" class="squares"></div>
-        <div id="sq7" class="squares"></div>
-        <div id="sq8" class="squares"></div>
-        <div id="sq9" class="squares"></div>
+        <div id="sq1" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq2" class="squares"onclick="placeMark(this.id)"></div>
+        <div id="sq3" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq4" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq5" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq6" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq7" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq8" class="squares" onclick="placeMark(this.id)"></div>
+        <div id="sq9" class="squares" onclick="placeMark(this.id)"></div>
     </div>
 
     <div id="buttons-container">
-        <input type="button" value="O">
-        <input type="button" value="X">
+        <input type="button" value="O" onclick="changeMarkerToO()">
+        <input type="button" value="X" onclick="changeMarkerToX()">
+    </div>
+
+    <div>
+        <input type="button" value="Start" id="clear" onclick="clearBoard()">
     </div>
 
 </main>

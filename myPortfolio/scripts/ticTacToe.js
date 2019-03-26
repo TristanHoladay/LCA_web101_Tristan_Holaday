@@ -1,21 +1,46 @@
+
+
+
 // clears board
-
-// create markers x and o
-
-var gameMarker = "X"
-var gameMarker = "O"
+function clearBoard() {
+    for (var i = 1; i < 10; i++) {
+    var clear = document.getElementById('sq' + i);
+    clear.innerHTML = "";
+    }
+}
+var gameMarker = "";
 
 // changes marker
+function changeMarkerToX() {
+    gameMarker = "X";
+    console.log("The x button was clicked!");
+}
 
-// makes player default marker
+function changeMarkerToO() {
+    gameMarker = "O";
+    console.log("The o button was clicked!");
+}
 
-// chooses which marker goes first
 
 //places marker on location onclick
 
 function placeMark(elementId) {
     var box = document.getElementById(elementId);
-    box.innerHTML = 
+    
+    if (gameMarker === "X") {
+
+
+        if (box.innerHTML === "") {
+           box.innerHTML = "X"; 
+        }
+    }
+    else {
+
+        if (box.innerHTML === "") {
+            box.innerHTML = "O";
+        }
+    }
+    
 }
 
 //keeps track of how many squares are marked
