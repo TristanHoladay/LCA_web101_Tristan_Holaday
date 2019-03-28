@@ -86,11 +86,13 @@ body {
   height: auto;
   background: #0000ff65;
   margin-bottom: 2em;
+  color: white;
 }
 
 .todo ul {
   grid-area: todo;
   list-style: upper-roman; 
+  font-size: 1.3em;
 }
 
 .todo li {
@@ -99,9 +101,10 @@ body {
 
 .todo input[type=text] {
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
+  margin: .5em 1em;
   max-width: 30em;
-  height: 2.5em;
+  height: 3.5em;
 }
 
 .todo_heading {
@@ -111,13 +114,14 @@ body {
 }
 
 #todo-button {
-  position: relative;
-  left: 3.5em;
-  bottom: 1em;
+  margin: 1em .5em;
+  padding: .3em;
+  font-size: 1.3em;
+  color: white;
+  background: transparent;
   width: 5em;
-  height: 2em;
+  height: auto;
 }
-
 
 .flex-calc-container {
   display: flex;

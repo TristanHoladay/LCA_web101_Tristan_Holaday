@@ -7,6 +7,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/dashboard-style.css">
     <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -46,20 +47,14 @@
                 <aside class="aside">
                   <!-- To Do List -->
                  <section class="todo">
-                    <ul>
                       <h3 class="todo_heading">To Do List</h3>
                       <h4 class="todo_heading">Input Task and Save</h4>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
-                      <li><input type="text" class=input></li>
+                    <ul>
                     </ul>
-                    <button id="todo-button">Save</button>
+                    <form id="newItemForm">
+                    <input type="text" id="itemField" placeholder="item"/>
+                    <input type="submit" id="todo-button" value="save"/>
+                  </form>
                   </section> 
                   <!-- Flex Calculator -->
                   <form id="calculator" class="flex-calc-container">
@@ -161,5 +156,7 @@
                   <a href="https://www.keepinspiring.me/famous-quotes/" id="footer-p-link">Click Here For More Great Quotes</a>
                 </footer> 
               </div>
+              
+<script src="../scripts/toDoApp.js"></script>
 </body>
 </html>

@@ -71,7 +71,7 @@ function win() {
     var eight = document.getElementById("sq8").innerHTML
     var nine = document.getElementById("sq9").innerHTML
     
-    var group = ((one && two && three) || (four && five && six) || (seven && eight && nine) || (one && four && seven) || (two && five && eight) || (three && six && nine) || (one && five && nine) || (three && five && seven));
+    var group = ((one && two && three) || ((four && five) && six) || ((seven && eight) && nine) || ((one && four) && seven) || ((two && five) && eight) || ((three && six) && nine) || ((one && five) && nine) || ((three && five) && seven));
 
     if ((group === "X") && (group != "O")) {
         alert("X wins!!!");
