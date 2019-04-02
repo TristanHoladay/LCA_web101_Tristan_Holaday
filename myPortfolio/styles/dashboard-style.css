@@ -253,6 +253,22 @@ body {
     border: 1px solid black;
   }
 
+  #geo-container {
+    width: 20%;
+    height: 100px;
+    margin: 3em 0;
+  }
+
+  .visible {
+    display: block;
+  }
+
+  #geolocation {
+    display: none;
+    background: white;
+    color: black;
+  }
+
   /* Footer */
   footer {
     grid-area: footer;
