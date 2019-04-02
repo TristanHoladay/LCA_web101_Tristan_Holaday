@@ -31,33 +31,24 @@ $(function() {
 $(document).ready(function($) {
     
     var $findMeBtn = $('#find-me');
-    var $locdisplay = $('#geolocation');
-
+    var $locdisplay = $('.coordinates')
     if (!navigator.geolocation) {
-        $$findMeBtn.addClass('disabled');
+        $findMeBtn.addClass('disabled');
         $locdisplay.addClass('visible');
         $locdispaly.innerHTML = "The geolocation API is not supported by this browser.";
-    } else if (location.protocol !== 'https:') {
-        
-        if (window.top === window.self) {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        } else {
-            $locdisplay.addClass('disabled');
-            $locdisplay.addClass('visible');
-            $locdisplay.innerHTML = "Not on HTTPS: ... Most browsers require HTTPS: for the geolocation API.";
-        };
     } else {
 
         $findMeBtn.on('click', function(e) {
             e.preventDefault();
             
             navigator.geolocation.getCurrentPosition(function(position) {
-                var lat = position.coords.latitude.toFixed(6);
-                var lng = position.coords.longitude.toFixed(6);
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
 
-                $locdisplay.addClass('visible');
-                $locdisplay.innerHTML = "Your coordinates are:<br>" + "Latitude: " + lat + "°<br>" + "Longitude: " + lng + "°";
-            };
+                $('.latitude').text(lat.toFixed(6) + '°');
+                $('.longitude').text(lng.toFixed(6) + '°');
+                $('.coordinates').addClass('visible');
+            });
         });
     };
 });

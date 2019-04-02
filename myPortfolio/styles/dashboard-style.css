@@ -254,20 +254,29 @@ body {
   }
 
   #geo-container {
-    width: 20%;
+    width: 30%;
     height: 100px;
     margin: 3em 0;
+    font-size: 1.4em;
+    color: white;
   }
 
-  .visible {
-    display: block;
-  }
+#find-me {
+  width: 100%;
+  height: auto;
+  font-size: 1.4em;
+  background: rgba(255, 255, 255, 0.363);
+}
 
-  #geolocation {
+  .coordinates {
     display: none;
-    background: white;
-    color: black;
+    margin-bottom: 2.5em;
   }
+
+   .visible { 
+    display: block;
+  } 
+
 
   /* Footer */
   footer {
