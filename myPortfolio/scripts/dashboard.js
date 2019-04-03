@@ -30,25 +30,36 @@ $(function() {
 
 $(document).ready(function($) {
     
-    var $findMeBtn = $('#find-me');
     var $locdisplay = $('.coordinates')
     if (!navigator.geolocation) {
         $findMeBtn.addClass('disabled');
         $locdisplay.addClass('visible');
         $locdispaly.innerHTML = "The geolocation API is not supported by this browser.";
     } else {
-
-        $findMeBtn.on('click', function(e) {
-            e.preventDefault();
             
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var lat = position.coords.latitude;
-                var lng = position.coords.longitude;
-
-                $('.latitude').text(lat.toFixed(6) + '°');
-                $('.longitude').text(lng.toFixed(6) + '°');
-                $('.coordinates').addClass('visible');
-            });
-        });
-    };
+            navigator.geolocation.getCurrentPosition(showPosition);
+            
+        }
 });
+
+function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+
+    $('.latitude').text(lat.toFixed(6) + '°');
+    $('.longitude').text(lng.toFixed(6) + '°');
+    $('.coordinates').addClass('visible');
+};
+
+$(function() {
+    var $refresh = $('#refresh');
+    var $newloc = $("<div></div>").text("New Location: ");
+
+    $refresh.on('click', function(e) {
+        e.preventDefault();
+        navigator.geolocation.getCurrentPosition(showPosition);
+        $('.coordinates').prepend($newloc);
+        });
+});
+
+

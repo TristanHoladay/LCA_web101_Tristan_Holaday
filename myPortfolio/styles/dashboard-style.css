@@ -261,16 +261,28 @@ body {
     color: white;
   }
 
-#find-me {
+#refresh {
   width: 100%;
   height: auto;
   font-size: 1.4em;
-  background: rgba(255, 255, 255, 0.363);
+  background: rgba(201, 50, 50, 0.363);
+  border-radius: 10px 10px;
+  color: white;
+}
+
+#map {
+  margin-top: .5em;
+  width: 100%;
+  height: auto;
+  font-size: 1.4em;
+  background: rgba(201, 50, 50, 0.363);
+  border-radius: 10px 10px;
+  color: white;
 }
 
   .coordinates {
-    display: none;
-    margin-bottom: 2.5em;
+    display: hidden;
+    margin-bottom: 1em;
   }
 
    .visible { 
