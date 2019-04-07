@@ -125,24 +125,28 @@ $(function() {
 
              //Increases Money
             $("[id^=square]").click(function () {
-
+                console.log("work");
                 
-                    var $currentHealth =  ($health -= $damage);
-                    $money += 2;
-                    console.log($damage);
+                if ($(this).has($icon)) {
+                var $currentHealth =  ($health -= $damage);
+                console.log($currentHealth);
+                $money += 2;  
+                console.log($money);
+                };    
                 
-
                 if ($currentHealth <= 0) {
-                    $( this ).remove($icon);
+                    console.log($currentHealth);
+                    $('[id^=robot]').detach();
                     $money += 10;
+                }else {
+                    return;
                 };
                 
                 if ($money === 300) {
-                    $lvlBtn.css("background-color", "green");
                 };
             });
     
-
+            
 
         // Levels Up the Player if Button is Clicked and Money is Sufficient 
             $lvlBtn.on('click', function(e) {

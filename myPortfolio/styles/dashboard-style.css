@@ -387,8 +387,9 @@ body {
   }
 
 /* Ordering */
-  .container {
+  #container {
     display: grid; 
+    grid-template-columns: 1fr;
     justify-items: center;
     grid-template-areas: 
       "header"
@@ -402,8 +403,9 @@ body {
   
   /* Having Issues with Keeping Background Image from Affecting the Responsiveness */
 
-  @media (min-width: 600px) {
-    .container {
+  
+  @media (max-width: 600px) {
+    #container {
       display: grid;
       grid-template-columns: 1fr 3fr; 
       grid-template-areas: 
@@ -411,10 +413,10 @@ body {
         "nav     nav"
         "aside   main" 
         "banner  banner"
+        ". game"
         ". footer";
         align-items: start;
     }
-
 
     .banner {
       display: flex;
@@ -435,8 +437,7 @@ body {
   
   @media (min-width: 930px) {
     
-    .container {
-    display: grid;
+    #container {
     grid-template-columns: 1fr 2fr;
     }
 
