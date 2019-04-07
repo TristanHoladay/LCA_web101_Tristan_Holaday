@@ -176,6 +176,7 @@ body {
     justify-content: center;
     padding: .2em;
     width: 100%;
+    height: auto;
     margin-bottom: 10px;
     color: black;
     grid-area: banner;
@@ -270,7 +271,7 @@ body {
   color: white;
 }
 
-#map {
+#mapBtn {
   margin-top: .5em;
   width: 100%;
   height: auto;
@@ -288,6 +289,17 @@ body {
    .visible { 
     display: block;
   } 
+
+  #map {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #map-canvas {
+    height: 20rem;
+    min-height: 15rem;
+    width: 100%;
+  }
 
 
   /* Footer */
@@ -311,6 +323,69 @@ body {
     margin-top: 4em;
   }
 
+  #game-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    margin: 2em 0;
+    grid-area: game;
+    border: 1px solid;
+  }
+
+  #gameBtn {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.3em;
+    color: white;
+    background: rgba(255, 255, 255, 0.363);
+  }
+
+  #game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    grid-gap: 5px;
+    width: 100%;
+    height: 500px;
+    margin: .5em 0;
+    background: white;
+  }
+
+  #stats {
+    grid-column: 1 / 3;
+    grid-row: 1/2;
+    display: flex;
+    justify-items: center;
+    text-align: left;
+    margin: 0 1em;
+    border: 1px solid;
+  }
+
+  #upgrade {
+    width: 100%;
+    height: auto;
+    grid-column: 3 / span 2;
+    grid-row: 1 / 2;
+    background: rgba(255, 255, 255, 0.363);
+  }
+
+  .squares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em .3em;
+    width: 70px;
+    height: 70px;
+    border: 1px solid;
+    color: black;
+  }
+
+  #robot {
+    font-size: 2em;
+  }
+
 /* Ordering */
   .container {
     display: grid; 
@@ -321,6 +396,7 @@ body {
       "banner"
       "main"
       "aside"
+      "game"
       "footer";
   }
   
