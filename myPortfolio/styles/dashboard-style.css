@@ -183,7 +183,12 @@ body {
   }
 
   .time-container {
-    background:rgba(224, 255, 255, 0.068);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: rgba(224, 255, 255, 0.068);
+    height: auto;
+    margin-bottom: 2em;
   }
 
   .icon {
@@ -201,7 +206,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 2px;
     width: 300px;
-    height: auto;
+    height: 400px;
     background: rgba(255, 255, 255, 0.226);
   }
   
@@ -256,7 +261,7 @@ body {
 
   #geo-container {
     width: 30%;
-    height: 100px;
+    height: auto;
     margin: 3em 0;
     font-size: 1.4em;
     color: white;
@@ -327,13 +332,30 @@ body {
   #game-container {
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 80%;
     height: auto;
     margin: 2em 0;
     grid-area: game;
+    color: white;
+  }
+
+  #buttons-container {
+    display: flex;
+    justify-content: space-between;
   }
 
   #gameBtn {
+    grid-row: 1/2;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.3em;
+    color: white;
+    background: rgba(255, 255, 255, 0.363);
+  }
+
+  #stopBtn {
+    grid-row: 1/2;
+    justify-self: start;
     width: 10rem;
     height: 3rem;
     font-size: 1.3em;
@@ -350,7 +372,7 @@ body {
     width: 100%;
     height: 500px;
     margin: .5em 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.226);
   }
 
   #stats {
@@ -360,7 +382,7 @@ body {
     justify-items: center;
     text-align: left;
     margin: 0 1em;
-    border: 1px solid;
+    font-size: 1.3em;
   }
 
   #upgrade {
@@ -369,6 +391,8 @@ body {
     grid-column: 3 / span 2;
     grid-row: 1 / 2;
     background: rgba(255, 255, 255, 0.363);
+    font-size: 2em;
+    color: white;
   }
 
   .squares {
@@ -378,10 +402,10 @@ body {
     margin: .2em .3em;
     width: 70px;
     height: 70px;
-    border: 1px solid;
+    border: 1px solid white;
     color: black;
   }
-
+  
   #robot {
     font-size: 2em;
     display: none;
@@ -417,6 +441,15 @@ body {
         ". game"
         ". footer";
         align-items: start;
+    }
+
+    .time-container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .calendar {
+      position: static;
+      height: 500px;
     }
 
     .banner {

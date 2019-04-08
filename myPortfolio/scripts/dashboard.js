@@ -103,16 +103,34 @@ $(function() {
 $(function() {
 
     var $gameBtn = $('#gameBtn');
+    var $lvlBtn = $('#upgrade');
+    var $stopBtn = $('#stopBtn');
     var $arr = $('.squares').toArray();
     var $icon = $('#robot');
-    var $lvlBtn = $('#upgrade');
     var $lvl = 0;
     var $damage = setDamage();
     var $money = 0;
     var $health = {};
+    var $interval = 1000;
+
+
 
     function setDamage() {
         return (5 + ($lvl*2));
+    };
+
+    // Selects Grid Squares at Random and Appends Icon if They're Empty
+    function randomId() {
+
+        var $rannum = Math.floor(Math.random() * 17);
+        var $id = $('#square' + $rannum);
+
+        if (  $id.contents().length == 0 ) {
+            $icon.css("display", "block");
+            $id.append($icon);
+        } else {
+
+        };
     };
     
 
@@ -123,26 +141,26 @@ $(function() {
             // Appends Icons to Grid Squares at Set Interval
             setInterval(function() {
                 randomId();
-            }, 3000);
+            }, $interval);
 
             $('.money').text("Money = " + $money);
+            $('.level').text("Level = " + $lvl);
 
-             //Increases Money
+            //Stops Game if Squares Fill Up
+            if ( $('.squares').children($icon).length > 0) {
+            } else {
+                console.log("Still going");
+            };
+
+             //Handles Health and Money
             $(".squares").click(function () {
-                console.log("work");
                 var $myHealth = $health[$(this).attr('id')] || 100;
                 
-                console.log($(this).attr('id'));
-                
                 if ($(this).children($icon).length > 0 ) {
-                    console.log($(this).children().has($icon));
                     $myHealth -= $damage;
-                    console.log($health);
-                    console.log("myhealth" + $myHealth);
                     $money += 2;  
-                    console.log("money" + $money);
                 } else {
-                    console.log("no icon");
+                    console.log("No Icon");
                 };    
                 
                 if ($myHealth <= 0) {
@@ -150,7 +168,13 @@ $(function() {
                     $money += 10;
                     $myHealth = 100;
                 }else {
-                    console.log("not dead");
+                    console.log("Not Dead");
+                };
+
+                if ($money >= 300) {
+                    $lvlBtn.css("background-color", "green");
+                } else {
+                    console.log("still transparent");
                 };
 
                 $health[$(this).attr('id')] = $myHealth
@@ -168,28 +192,21 @@ $(function() {
                     $money -= 300;
                     $damage = setDamage();
                     $('.money').text("Money = " + $money);
-                    console.log($lvl);
+                    $('.level').text("Level = " + $lvl);
+                    $lvlBtn.css("background-color", "red");
+                } else {
+                    console.log("You Need More Money Honey");
                 };
 
             });
 
+        $stopBtn.on('click', function() {
+            $("[id^=square]").children().remove();
+            return;
+        });
 
 
     });
-
-    // Selects Grid Squares at Random and Appends Icon if They're Empty
-    function randomId() {
-
-        var $rannum = Math.floor(Math.random() * 17);
-        var $id = $('#square' + $rannum);
-
-        if (  $id.contents().length == 0 ) {
-            $icon.css("display", "block");
-            $id.append($icon);
-        } else {
-
-        };
-    };
     
 
 });
