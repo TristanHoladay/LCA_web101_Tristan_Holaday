@@ -105,11 +105,15 @@ $(function() {
     var $gameBtn = $('#gameBtn');
     var $arr = $('.squares').toArray();
     var $icon = $('#robot');
-    var $health = 100;
     var $lvlBtn = $('#upgrade');
     var $lvl = 0;
-    var $damage = (5 + ($lvl*2));
+    var $damage = setDamage();
     var $money = 0;
+    var $health = {};
+
+    function setDamage() {
+        return (5 + ($lvl*2));
+    };
     
 
     // when the play button is clicked, execute these functions
@@ -124,26 +128,33 @@ $(function() {
             $('.money').text("Money = " + $money);
 
              //Increases Money
-            $("[id^=square]").click(function () {
+            $(".squares").click(function () {
                 console.log("work");
+                var $myHealth = $health[$(this).attr('id')] || 100;
                 
-                if ($(this).has($icon)) {
-                var $currentHealth =  ($health -= $damage);
-                console.log($currentHealth);
-                $money += 2;  
-                console.log($money);
+                console.log($(this).attr('id'));
+                
+                if ($(this).children($icon).length > 0 ) {
+                    console.log($(this).children().has($icon));
+                    $myHealth -= $damage;
+                    console.log($health);
+                    console.log("myhealth" + $myHealth);
+                    $money += 2;  
+                    console.log("money" + $money);
+                } else {
+                    console.log("no icon");
                 };    
                 
-                if ($currentHealth <= 0) {
-                    console.log($currentHealth);
-                    $('[id^=robot]').detach();
+                if ($myHealth <= 0) {
+                    $(this).children().remove();
                     $money += 10;
+                    $myHealth = 100;
                 }else {
-                    return;
+                    console.log("not dead");
                 };
-                
-                if ($money === 300) {
-                };
+
+                $health[$(this).attr('id')] = $myHealth
+                $('.money').text("Money = " + $money);
             });
     
             
@@ -152,9 +163,11 @@ $(function() {
             $lvlBtn.on('click', function(e) {
                 e.preventDefault();
 
-                if ($money === 300) {
+                if ($money >= 300) {
                     $lvl += 1;
                     $money -= 300;
+                    $damage = setDamage();
+                    $('.money').text("Money = " + $money);
                     console.log($lvl);
                 };
 
@@ -171,14 +184,12 @@ $(function() {
         var $id = $('#square' + $rannum);
 
         if (  $id.contents().length == 0 ) {
+            $icon.css("display", "block");
             $id.append($icon);
         } else {
 
         };
     };
-
-    
-
     
 
 });
