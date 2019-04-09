@@ -112,6 +112,7 @@ $(function() {
     var $money = 0;
     var $health = {};
     var $interval = 1000;
+    var $on = true;
 
 
 
@@ -125,88 +126,85 @@ $(function() {
         var $rannum = Math.floor(Math.random() * 17);
         var $id = $('#square' + $rannum);
 
-        if (  $id.contents().length == 0 ) {
+        if (  ($id.contents().length == 0) && ($on === true) ) {
             $icon.css("display", "block");
             $id.append($icon);
         } else {
-
+            console.log($on);
         };
     };
     
+        // when the play button is clicked, execute these functions
+        $gameBtn.on('click', function(e) {
+            e.preventDefault();
 
-    // when the play button is clicked, execute these functions
-    $gameBtn.on('click', function(e) {
-        e.preventDefault();
 
-            // Appends Icons to Grid Squares at Set Interval
-            setInterval(function() {
-                randomId();
-            }, $interval);
+                // Appends Icons to Grid Squares at Set Interval
+                setInterval(function() {
+                    randomId();
+                }, $interval);
 
-            $('.money').text("Money = " + $money);
-            $('.level').text("Level = " + $lvl);
+                $stopBtn.on('click', function() {
+                    $("[id^=square]").children().remove();
+                    $on = false;
+                    console.log($on);
+                });
 
-            //Stops Game if Squares Fill Up
-            if ( $('.squares').children($icon).length > 0) {
-            } else {
-                console.log("Still going");
-            };
-
-             //Handles Health and Money
-            $(".squares").click(function () {
-                var $myHealth = $health[$(this).attr('id')] || 100;
-                
-                if ($(this).children($icon).length > 0 ) {
-                    $myHealth -= $damage;
-                    $money += 2;  
-                } else {
-                    console.log("No Icon");
-                };    
-                
-                if ($myHealth <= 0) {
-                    $(this).children().remove();
-                    $money += 10;
-                    $myHealth = 100;
-                }else {
-                    console.log("Not Dead");
-                };
-
-                if ($money >= 300) {
-                    $lvlBtn.css("background-color", "green");
-                } else {
-                    console.log("still transparent");
-                };
-
-                $health[$(this).attr('id')] = $myHealth
                 $('.money').text("Money = " + $money);
-            });
-    
-            
+                $('.level').text("Level = " + $lvl);
 
-        // Levels Up the Player if Button is Clicked and Money is Sufficient 
-            $lvlBtn.on('click', function(e) {
-                e.preventDefault();
-
-                if ($money >= 300) {
-                    $lvl += 1;
-                    $money -= 300;
-                    $damage = setDamage();
-                    $('.money').text("Money = " + $money);
-                    $('.level').text("Level = " + $lvl);
-                    $lvlBtn.css("background-color", "red");
+                //Stops Game if Squares Fill Up
+                if ( $('.squares').children($icon).length > 0) {
                 } else {
-                    console.log("You Need More Money Honey");
+                    console.log("Still going");
                 };
 
-            });
+                //Handles Health and Money
+                $(".squares").click(function () {
+                    var $myHealth = $health[$(this).attr('id')] || 100;
+                    
+                    if ($(this).children($icon).length > 0 ) {
+                        $myHealth -= $damage;
+                        $money += 2;  
+                    } else {
+                        console.log("No Icon");
+                    };    
+                    
+                    if ($myHealth <= 0) {
+                        $(this).children().remove();
+                        $money += 10;
+                        $myHealth = 100;
+                    }else {
+                        console.log("Not Dead");
+                    };
 
-        $stopBtn.on('click', function() {
-            $("[id^=square]").children().remove();
-            return;
-        });
+                    if ($money >= 300) {
+                        $lvlBtn.css("background-color", "green");
+                    } else {
+                        console.log("still transparent");
+                    };
 
+                    $health[$(this).attr('id')] = $myHealth
+                    $('.money').text("Money = " + $money);
+                });
+        
+                
 
-    });
-    
+            // Levels Up the Player if Button is Clicked and Money is Sufficient 
+                $lvlBtn.on('click', function(e) {
+                    e.preventDefault();
 
+                    if ($money >= 300) {
+                        $lvl += 1;
+                        $money -= 300;
+                        $damage = setDamage();
+                        $('.money').text("Money = " + $money);
+                        $('.level').text("Level = " + $lvl);
+                        $lvlBtn.css("background-color", "red");
+                    } else {
+                        console.log("You Need More Money Honey");
+                    };
+
+                }); 
+        }); 
 });
