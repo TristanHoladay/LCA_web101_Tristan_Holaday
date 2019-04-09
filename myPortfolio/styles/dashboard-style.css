@@ -353,6 +353,17 @@ body {
     background: rgba(255, 255, 255, 0.363);
   }
 
+  #instruct {
+    display: none;
+    background: rgba(255, 255, 255, 0.363);
+    font-size: 1.1em;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    padding-top: 1em;
+    justify-self: start;
+  }
+
   #stopBtn {
     grid-row: 1/2;
     justify-self: start;

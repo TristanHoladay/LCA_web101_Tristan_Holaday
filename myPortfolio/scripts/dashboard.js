@@ -105,13 +105,14 @@ $(function() {
     var $gameBtn = $('#gameBtn');
     var $lvlBtn = $('#upgrade');
     var $stopBtn = $('#stopBtn');
+    var $ins = $('#instruct');
     var $arr = $('.squares').toArray();
     var $icon = $('#robot');
     var $lvl = 0;
     var $damage = setDamage();
     var $money = 0;
     var $health = {};
-    var $interval = 1000;
+    var $interval = 500;
     var $on = true;
 
 
@@ -137,7 +138,11 @@ $(function() {
         // when the play button is clicked, execute these functions
         $gameBtn.on('click', function(e) {
             e.preventDefault();
-
+                $on = true;
+                $money = 0;
+                $lvl = 0;
+                
+                $ins.css("display", "inline-block");
 
                 // Appends Icons to Grid Squares at Set Interval
                 setInterval(function() {
