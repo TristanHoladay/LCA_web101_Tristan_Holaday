@@ -4,8 +4,6 @@ $(function() {
 
     let $itemField = $('#itemField');
 
-
-
     let $list = $('#todo');
     let $newItemForm = $('#newItemForm');
 
@@ -141,7 +139,7 @@ $(function() {
                 $on = true;
                 $money = 0;
                 $lvl = 0;
-                
+
                 $ins.css("display", "inline-block");
 
                 // Appends Icons to Grid Squares at Set Interval
@@ -213,3 +211,48 @@ $(function() {
                 }); 
         }); 
 });
+
+
+//Calculator 
+document.addEventListener("DOMContentLoaded", function() {
+    var input = document.querySelector('#input');
+    var numBtns = document.querySelectorAll(".num-btn");
+    var opBtns = document.querySelectorAll('.op-btn');
+    var results = document.querySelector('#equals');
+    var evalString = "";
+
+    results.addEventListener("click", function(e) {
+        evaluate();
+    });
+   
+    for(let i = 0; i<numBtns.length; i++) {
+        numBtns[i].addEventListener("click", function(e) {
+            var string = this.value;
+            evalString += string;
+            addToValue(string);
+
+            console.log(evalString);
+        });
+    }
+
+    for(let i = 0; i<opBtns.length; i++) {
+        opBtns[i].addEventListener("click", function(e) {
+            var string = this.value;
+            evalString += string;
+            input.innerHTML = "";
+            console.log(evalString);
+        });
+    };
+    // map buttons to values
+    function addToValue(val) {
+            input.innerHTML += val;
+    };
+
+
+    // function to evaluate the input
+    function evaluate(evalString) {
+       var result = eval(evalString);
+        input.innerHTML = result;
+    };
+});
+

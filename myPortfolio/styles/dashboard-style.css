@@ -158,6 +158,12 @@ body {
   height: 65px;
 }
 
+#equals {
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+
 .op-btn {
   display: block;
   width: 70px;

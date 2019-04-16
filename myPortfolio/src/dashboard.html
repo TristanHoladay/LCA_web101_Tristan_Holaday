@@ -58,9 +58,9 @@
                   </section> 
                   <!-- Flex Calculator -->
                   <form id="calculator" class="flex-calc-container">
-                    <div id="display" class="flex-display"></div>
+                    <div id="input" class="flex-display" readonly></div>
                     <div class="btns-container">
-                    <input type="button" class="num-btn" value="1" onclick="calculator.display.value += '1'">
+                    <input type="button" class="num-btn" value="1">
                     <input type="button" class="num-btn" value="2">
                     <input type="button" class="num-btn" value="3">
                     <input type="button" class="op-btn" value="+">
@@ -74,7 +74,7 @@
                     <input type="button" class="op-btn" value="*">
                     <input type="button" class="num-btn" value="Cl">
                     <input type="button" class="num-btn" value="0">
-                    <input type="button" class="num-btn" value="=">
+                    <input type="button" id="equals" value="=">
                     <input type="button" class="op-btn" value="/">
                   </div>
                 </form>  
