@@ -219,22 +219,53 @@ document.addEventListener("DOMContentLoaded", function() {
     var numBtns = document.querySelectorAll(".num-btn");
     var opBtns = document.querySelectorAll('.op-btn');
     var results = document.querySelector('#equals');
+    var clear = document.querySelector('#clear-btn');
+    var remove = document.querySelector('#remove-btn');
     var evalString = "";
 
+    //Evaluate String When "=" Is Clicked
     results.addEventListener("click", function(e) {
-        evaluate();
+        evaluate(evalString);
     });
    
+    //Clear Input & String
+    clear.addEventListener("click", function(e) {
+        input.innerHTML = "";
+        evalString = "";
+    });
+
+    //Remove Last Input & Return New String
+    remove.addEventListener("click", function(e) {
+        var cutString = evalString.slice(0, evalString.length-1);
+        evalString = cutString;
+
+        var inval = input.innerHTML;
+        var newInval = inval.slice(0, inval.length-1);
+        input.innerHTML = newInval;
+    });
+
+    // Display Values 
+    function addToValue(val) {
+        input.innerHTML += val;
+    };
+
+    // Evaluate The String
+    function evaluate(evalString) {
+        var result = eval(evalString);
+        input.innerHTML = result;
+    };
+
+    //Selecting Number Btn Clicked & Adding Value to String
     for(let i = 0; i<numBtns.length; i++) {
+        console.log(numBtns[i]);
         numBtns[i].addEventListener("click", function(e) {
             var string = this.value;
             evalString += string;
-            addToValue(string);
-
-            console.log(evalString);
+            addToValue(string);  
         });
-    }
+    };
 
+    //Selecting Operation Btn Clicked & Adding Value to String
     for(let i = 0; i<opBtns.length; i++) {
         opBtns[i].addEventListener("click", function(e) {
             var string = this.value;
@@ -242,17 +273,6 @@ document.addEventListener("DOMContentLoaded", function() {
             input.innerHTML = "";
             console.log(evalString);
         });
-    };
-    // map buttons to values
-    function addToValue(val) {
-            input.innerHTML += val;
-    };
-
-
-    // function to evaluate the input
-    function evaluate(evalString) {
-       var result = eval(evalString);
-        input.innerHTML = result;
     };
 });
 

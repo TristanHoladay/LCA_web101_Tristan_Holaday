@@ -145,14 +145,36 @@ body {
   margin: 1em 3em;
 }
 
+.remove-btn {
+  display: flex;
+  flex-wrap: none;
+  width: 100%;
+  height: auto;
+  margin: 0 .3em;
+  justify-content: flex-end;
+}
+
+#remove-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
 .btns-container {
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
   align-items: stretch;
   margin: .3em;
+  margin-top: 0;
 }
 .num-btn {
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+
+#clear-btn {
   display: block;
   width: 65px;
   height: 65px;
