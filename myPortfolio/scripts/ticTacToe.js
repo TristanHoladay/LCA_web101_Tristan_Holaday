@@ -1,29 +1,36 @@
 
 //global variables
 var gameMarker = "";
+var player = null;
 var moves = 1;
+ 
 
+//Selects Random Player to start
+function start() {
+    var startPlayer = Math.floor((Math.random() *2) + 1);
+    player = startPlayer;
+    changeMarker();
+ }
 
-// clears board
+//Clears Board
 function clearBoard() {
     for (var i = 1; i < 10; i++) {
-    var clear = document.getElementById('sq' + i);
-    clear.innerHTML = "";
-    moves = 1;
+        var clear = document.getElementById('sq' + i);
+        clear.innerHTML = "";
+        moves = 1;
     }
 }
 
-
-// changes marker
-function changeMarkerToX() {
-    gameMarker = "X";
-    console.log("The x button was clicked!");
-}
-
-function changeMarkerToO() {
-    gameMarker = "O";
-    console.log("The o button was clicked!");
-}
+//Changes Marker
+function changeMarker() {
+    if(player === 1) {
+        gameMarker = "X";
+        player = 2;
+    } else {
+        gameMarker = "O";
+        player = 1;
+    }; 
+};
 
 
 //places marker on location onclick
@@ -38,7 +45,8 @@ function placeMark(elementId) {
 
 
             if (box.innerHTML === "") {
-            box.innerHTML = "X"; 
+            box.innerHTML = "X";
+            changeMarker();
             win();
             }
         }
@@ -46,6 +54,7 @@ function placeMark(elementId) {
 
             if (box.innerHTML === "") {
                 box.innerHTML = "O";
+                changeMarker();
                 win();
             }
         }

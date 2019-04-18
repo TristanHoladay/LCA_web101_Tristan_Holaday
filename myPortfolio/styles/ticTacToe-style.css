@@ -37,6 +37,13 @@ main {
     margin: .5em .5em;
 }
 
+#start {
+    width: 130px;
+    height: auto;
+    padding: 1em 0;
+    font-size: 2em;
+}
+
 #clear {
     width: 130px;
     height: auto;

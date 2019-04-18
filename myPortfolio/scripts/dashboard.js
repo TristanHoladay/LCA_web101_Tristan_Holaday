@@ -213,6 +213,8 @@ $(function() {
 });
 
 
+
+
 //Calculator 
 document.addEventListener("DOMContentLoaded", function() {
     var input = document.querySelector('#input');
@@ -247,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Display Values 
     function addToValue(val) {
         input.innerHTML += val;
+        console.log(input.innerHTML);
     };
 
     // Evaluate The String
@@ -257,11 +260,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //Selecting Number Btn Clicked & Adding Value to String
     for(let i = 0; i<numBtns.length; i++) {
-        console.log(numBtns[i]);
         numBtns[i].addEventListener("click", function(e) {
             var string = this.value;
             evalString += string;
-            addToValue(string);  
+            addToValue(string); 
         });
     };
 
@@ -269,9 +271,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for(let i = 0; i<opBtns.length; i++) {
         opBtns[i].addEventListener("click", function(e) {
             var string = this.value;
-            evalString += string;
-            input.innerHTML = "";
+            
+            if (evalString[0] === string) {
+                evalString += string;
+                input.innerHTML = "";
+            } else {
+                console.log("operator first error");
+            };
+            
             console.log(evalString);
+                
         });
     };
 });
