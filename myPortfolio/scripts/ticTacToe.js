@@ -70,25 +70,9 @@ function placeMark(elementId) {
 
 //declares win or lose by getting 3 in a row
 function win() {
-    var one = document.getElementById("sq1").innerHTML
-    var two = document.getElementById("sq2").innerHTML
-    var three = document.getElementById("sq3").innerHTML
-    var four = document.getElementById("sq4").innerHTML
-    var five = document.getElementById("sq5").innerHTML
-    var six = document.getElementById("sq6").innerHTML
-    var seven = document.getElementById("sq7").innerHTML
-    var eight = document.getElementById("sq8").innerHTML
-    var nine = document.getElementById("sq9").innerHTML
+    var cells = document.querySelectorAll('.squares');
     
-    var group = ((one && two && three) || ((four && five) && six) || ((seven && eight) && nine) || ((one && four) && seven) || ((two && five) && eight) || ((three && six) && nine) || ((one && five) && nine) || ((three && five) && seven));
-
-    if ((group === "X") && (group != "O")) {
-        alert("X wins!!!");
-    }
     
-    if ((group === "O") && (group != "X")) {
-        alert("O wins!!!");
-    }
     
 
 }
